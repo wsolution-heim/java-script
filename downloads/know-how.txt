@@ -1,0 +1,26 @@
+currentResult = currentResult + 10; 
+// Die rechte Seite wird zuerst ausgeführt, diese dann der Linke zugewiesen
+
+
+Infos über Strings:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Escape_notation
+
+`(${variable} + 10)`
+let calculationDescription = `(${defaultResult} + 10) / 3 *2 - 4`; 
+Backticks ermöglichen es mit ${variablenname} eine variable in einem String auszugeben
+
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+Template literals are string literals allowing embedded expressions. You can use multi-line strings and string interpolation features with them. They were called "template strings" in prior editions of the ES2015 specification
+
+\n --> Zeilenumbruch in einem String
+
+
+
+
+FUNCTION ==> Code on Demand
+
+
+
+
+
