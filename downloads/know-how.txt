@@ -20,7 +20,25 @@ Template literals are string literals allowing embedded expressions. You can use
 
 FUNCTION ==> Code on Demand
 
+Nach einer Function KEIN SEMICOLON!!!!!
+nach einem ausfürenden Code {} -- niemals Semikolon!!
+
+Strings always have to be in one line (or split into multiple strings, concatenated via +).
+
+function add(num1, num2) {
+	const result = num1 + num2;
+	return result;
+}
+eine Funktion kann auch mittels return result; einer variable zugewiesen werden
+currentResult = add(5, 15);
 
 
 
+You CAN'T use local/black-scope variables (= declared inside of functions) OUTSIDE of them!
+
+return XXX --> beendet eine Funktion, alles was danach kommt, wird nicht ausgeführt
+
+
+addBtn.addEventListener('click', add);
+==> wenn der Button geklickt wurde, suche die Funktion add und führe dies aus!
 
