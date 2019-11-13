@@ -1,18 +1,58 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
+let logEntries = [];
 
-function add(num1, num2) {
-	const result = num1 + num2;
-	// alert('The result is ' + result);
-	return result;
+// Gets input from input field
+function getUserNumberInput() {
+	return parseInt(userInput.value);
 }
 
-currentResult = add(5, 15);
+// Generates and writes calculation log
+function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
+	const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
+	outputResult(currentResult, calcDescription); // from vendor file
+}
 
-// let calculationDescription = '0 + 10 / 3 *2 - 4'; 
 
-let calculationDescription = `(${defaultResult} + 10) / 3 *2 - 4`; 
+function add() {
+	const enteredNumber = getUserNumberInput();
+	const initialResult = currentResult;
+	currentResult += enteredNumber;
+	createAndWriteOutput('+', initialResult, enteredNumber);
+	const logEntry = {
+		operation: 'ADD',
+		prevResult: initialResult,
+		number: enteredNumber,
+		result: currentResult
+	};
+	logEntries.push(logEntry);
+	console.log(logEntries);
+	console.log(logEntry.operation);
+}
 
-outputResult(currentResult, calculationDescription);
-// outputResult(currentResult, '');
+function subtract() {
+	const enteredNumber = getUserNumberInput();
+	const initialResult = currentResult;
+	currentResult -= enteredNumber;
+	createAndWriteOutput('-', initialResult, enteredNumber);
+}
+
+function multiply(){
+	const enteredNumber = getUserNumberInput();
+	const initialResult = currentResult;
+	currentResult *= enteredNumber;
+	createAndWriteOutput('*', initialResult, enteredNumber);
+}
+
+function divide() {
+	const enteredNumber = getUserNumberInput();	
+	const initialResult = currentResult;
+	currentResult /= enteredNumber;
+	createAndWriteOutput('/', initialResult, enteredNumber);
+}
+
+addBtn.addEventListener('click', add);
+subtractBtn.addEventListener('click', subtract);
+multiplyBtn.addEventListener('click', multiply);
+divideBtn.addEventListener('click', divide);
 
