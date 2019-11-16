@@ -162,6 +162,47 @@ const worstPossibleUser = {
 console.log(logEntry.operation); // wenn nur ein teil des Objektes (Property) ausgegebn werden soll
 
 
+Eine Variable resetten.. zb: userName = null;
+
+typeof Keyword ==> gibt den Typ der variable an.. zb. string, number ...
+typeof userName;
+
+
+Im Header:
+
+	DEFER
+    <script src="assets/scripts/vendor.js" defer></script>
+    <script src="assets/scripts/app.js" defer></script>
+
+    ==> A script that will not run until after the page has loaded, but its downloaded right away
+
+
+    ASYNC
+	<script src="assets/scripts/vendor.js" async></script>
+	==> loads the script as early as possible and executes it when its finished. A script that will be run asynchronously as soon as it is available:
+	Die Reihenfolge bei mehreren Scripts mit async ist nicht vorgegeben.. es wird als erstes geladen was als erstes downgeloaded wurde
+	==> wird benutzt mit Stand-Alone Scripte welche nichts mit der Html Seite zu tun haben
+
+
+MDN => JavaScript Basics: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+MDN => Variables: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables
+
+MDN => Operators: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Math
+
+MDN => Functions: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Functions
+
+MDN => Arrays: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays
+
+MDN => Objects: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
+
+
+
+shift + f == AutoFormat
+
+Strg + D ==> zeigt und markiert das nächste des markierten Objekts an. Somit können alle markiert und ausgewählt und auf einmal geändert werden!
+
+
 
 
 
