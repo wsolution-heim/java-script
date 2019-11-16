@@ -214,6 +214,11 @@ VS Code Extensions Docs: https://code.visualstudio.com/docs/editor/extension-gal
 Google Chrome DevTools Docs: https://developers.google.com/web/tools/chrome-devtools/
 
 
+JavaScript always looks at the first character and only considers other characters if the first character is similar. In addition, capital characters are considered to be smaller than lowercase characters.
+
+function() ==> Inhalt in () immer in ''
+
+
 
 
 
