@@ -203,6 +203,17 @@ shift + f == AutoFormat
 Strg + D ==> zeigt und markiert das nächste des markierten Objekts an. Somit können alle markiert und ausgewählt und auf einmal geändert werden!
 
 
+The following resources may be helpful.
+
+VS Code Docs: https://code.visualstudio.com/docs
+
+VS Code Keybindings: https://code.visualstudio.com/docs/getstarted/keybindings
+
+VS Code Extensions Docs: https://code.visualstudio.com/docs/editor/extension-gallery
+
+Google Chrome DevTools Docs: https://developers.google.com/web/tools/chrome-devtools/
+
+
 
 
 
