@@ -236,7 +236,16 @@ return; in einer Funktion, beendet diese!
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 
-JS vergibt ein FALSE wenn 0
+JS vergibt ein FALSE wenn Number 0
+if !enteredNumber  ==> wenn enteredNumber is 0, also FALSE!!! == FALSY
+0 --> FALSE
+"" --> FALSE (empty String)
+all other empty arrays or obejcts []{} --> TRUE
+null, undefined, NaN --> FALSE
+
+
+
+
 
 
 
