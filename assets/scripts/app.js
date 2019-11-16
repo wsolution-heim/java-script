@@ -47,7 +47,10 @@ function calculateResult(calculationType) {
 		calculationType !== 'ADD' && 
 		calculationType !== 'SUBTRACT' &&
 		calculationType !== 'MULITPLY' &&
-	)
+		calculationType !== 'DIVIDE' 
+	) {
+		return;
+	}
 
   createAndWriteOutput(mathOperator, initialResult, enteredNumber);
   writeToLog(calculationTyp, initialResult, enteredNumber, currentResult);

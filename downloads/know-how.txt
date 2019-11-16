@@ -234,6 +234,10 @@ OR ||
 return; in einer Funktion, beendet diese!
 
 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+
+JS vergibt ein FALSE wenn 0
+
 
 
 
