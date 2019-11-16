@@ -20,7 +20,275 @@ Template literals are string literals allowing embedded expressions. You can use
 
 FUNCTION ==> Code on Demand
 
+Nach einer Function KEIN SEMICOLON!!!!!
+nach einem ausfürenden Code {} -- niemals Semikolon!!
+
+Strings always have to be in one line (or split into multiple strings, concatenated via +).
+
+function add(num1, num2) {
+	const result = num1 + num2;
+	return result;
+}
+eine Funktion kann auch mittels return result; einer variable zugewiesen werden
+currentResult = add(5, 15);
+
+
+
+You CAN'T use local/black-scope variables (= declared inside of functions) OUTSIDE of them!
+
+return XXX --> beendet eine Funktion, alles was danach kommt, wird nicht ausgeführt
+
+
+addBtn.addEventListener('click', add);
+==> wenn der Button geklickt wurde, suche die Funktion add und führe dies aus!
+Ohne () !!! --> mit () wird es sofort ausgeführt!!
+
+
+ A local variable (i.e. created in a function) which also exists as a global variable is a "shadowed variable".
+
+
+ function helloName(userName) {
+	alert('Hello ' + userName);
+}
+
+helloName('Claudia'); ==> AUFRUF funktioniert nur mit ''!!!!
+
+
+const task3Element = document.getElementById('task-3');
+task3Element.addEventListener('click', textOutput);
+
+
+ein INPUT ELEMENT bei JS ist IMMER ein string!!!!
+um die Eingabe in eine Zahl zu wandeln:
+parseInt oder parseFloat (int = 10  - float = 10.0)
+
+function add(num1, num2) {
+	currentResult = currentResult + parseInt(userInput.value);
+	outputResult(currentResult, '');
+}
+
+ODER ein leerzeichen und ein zweites + (direkt an userInput.value) -> gleiches Ergebnis
+	currentResult = currentResult + +userInput.value;
+
+const calcDescription = `${currentResult} + ${userInput.value}`;  --> wird als STRING behandelt
+
+
+Keine LOGIK (oder Berechnung) wiederholen --> besser als const variable auslagern!!!
+
+function add() {
+	const enteredNumber = parseInt(userInput.value);
+	const calcDescription = `${currentResult} + ${enteredNumber}`;
+	currentResult = currentResult + enteredNumber;
+	outputResult(currentResult, calcDescription);
+}
+
+ODER ALS EIGENE FUNKTION
+
+function getUserNumberInput() {
+	return parseInt(userInput.value);
+}
+
+
+function add() {
+	const enteredNumber = getUserNumberInput();
+	const calcDescription = `${currentResult} + ${enteredNumber}`;
+	currentResult = currentResult + enteredNumber;
+	outputResult(currentResult, calcDescription);
+}
+
+const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;  ==> Output TEXT
+
+aus der Function oben add() wird dann dieses:
+
+function getUserNumberInput() {
+	return parseInt(userInput.value);
+}
+
+function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
+	const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
+	outputResult(currentResult, calcDescription);
+}
+
+
+function add() {
+	const enteredNumber = getUserNumberInput();
+	const initialResult = currentResult;
+	currentResult = currentResult + enteredNumber;
+	createAndWriteOutput('+', initialResult, enteredNumber);
+}
+
+
+// This is a comment
+/* Kommentar über
+mehrere Zeilen */
+
+
+Abkürzungen
+
+currentResult = currentResult + enteredNumber;  == currentResult += enteredNumber;
+Der Operator muss VOR dem ISTGLEICH stehen!!!!
+
+currentResult = currentResult + 1; == curentResult++;
+currentResult = currentResult - 1; == curentResult--;
+
+
+
+ARRAY
+logEntries.push(); == push() um neue Infos hinzuzufügen ohne die alten zu überschreiben
+
+Objects - Common Syntax Gotchas
+You learned the correct syntax for creating an object in the last lecture:
+
+const user = {
+    name: 'Max',
+    age: 30
+};
+A couple of important things:
+
+You use {} to "group the data" - a semicolon (;) is used after the closing }. On functions, we didn't do that. As a rule of thumb, you can keep in mind that a semicolon is used after {} if the {} are on the right side of the equal sign!
+
+key-value pairs are separated via a comma (,), NOT via a semicolon. Using a semicolon inside of an object (i.e. between {}), would be a syntax error!
+
+Values are assigned to keys/ properties via a colon (:), NOT via an equal sign (=). Using an equal sign inside of an object (i.e. between {}), would be a syntax error!
+
+I.e. this would be WRONG and would throw an error:
+
+const worstPossibleUser = {
+    name = 'Max';
+    age = 30;
+};
+
+
+console.log(logEntry.operation); // wenn nur ein teil des Objektes (Property) ausgegebn werden soll
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.filter()
+filter method does exactly what its name says, It filters out the array based on certain condition.
+
+Suppose your company marketing manager wants to run an offer for teenage app users,
+
+Let’s Create an array of app users whose age is less than or equal to 18.
+
+var appUsers = [16, 28 , 35, 43, 12 , 55, 18]
+​
+var findTeenagers = appUsers.filter(function(age) {
+return age <= 18 })
+​
+console.log(findTeenagers);
+​
+// Expected Output - [16, 12, 18]
+
+
+.map()
+The map() method is very useful in building react applications, it creates a new array and calls the provided function once for each element in an array, in order.
+
+Now, let’s create a new array and add a Pound sign before each Array elements.
+
+var notes = [20, 100, 200, 10]
+​
+var poundNotes = notes.map( number => '£' + number);
+​
+console.log(poundNotes);
+​
+//Expected-Output ["£20", "£100", "£200", "£10"]
+.reduce()-
+The reduce()  method is used to reduce all items in an array to a single value
+
+Suppose you are making an e-commerce application, Now let’s reduce the cart value in array  to single value.
+
+var cart = [60, 85, 50, 60];
+​
+var totalCart = cart.reduce((accumulator, currentValue) => {
+return accumulator + currentValue;},0);
+​
+console.log(totalCart);
+​
+// expected output = 255
+// accumulator = a 
+// currentValue = c
+//a = 0, c = 60 => a = 60;
+//a = 60, c = 85 => a = 145;
+//a = 145, c = 50 => a=> 195;
+//a = 195, c = 60 => 255;
+​
+
+
+
+.forEach()-
+The forEach method executes a provided function once for each array element.
+
+var number = [4, 2, 6];
+​
+number.forEach(function (element) {
+​
+console.log(element + ' is even');
+})
+​
+// expected output = "4 is even"
+// expected output = "2 is even"
+// expected output = "6 is even"
+
+
+
+
+.some()
+Some() method checks if any of the elements in an array pass the test based on provided function .Note- It always returns a boolean value
+
+Suppose you are the admin of an app, let’s make an admin authorization test.
+
+var userLogin = ['customer', 'customer', 'admin', 'customer', 'customer'];
+​
+var adminLogin = userLogin.some(value => value === 'admin');
+​
+console.log(adminLogin);
+// expected output = true;
+
+
+
+.every()
+The every() method checks if all elements in the array pass the test.
+
+Let’s Check if all the users are less than 100 years old
+
+var age = [13, 53, 99, 40, 35];
+​
+var checkAge = age.every( value => value <= 100 );
+​
+console.log(checkAge);
+​
+// expected output = true;
+
+
+
+
+.find()
+The find() method prints the value of the first element in an array that satisfies the function condition.
+
+Example- Lets check product stock in an app
+
+var productStock = [
+{name: 'macbook', price: 60},
+{name: 'car', price: 150},
+{name: 'phone',price: 10},]
+​
+var checkProductStock = productStock.find( (item) => {return item.name === 'phone'})
+​
+console.log(checkProductStock); 
+​
+// expected output = {name: "phone",price: 10}
