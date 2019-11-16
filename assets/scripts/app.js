@@ -41,10 +41,18 @@ function calculateResult(calculationType) {
   } else if (calculationType === 'DIVIDE') {
 		 currentResult /= enteredNumber;
 		 mathOperator = '/';
-  }
+	}
+	
+	if (
+		calculationType !== 'ADD' && 
+		calculationType !== 'SUBTRACT' &&
+		calculationType !== 'MULITPLY' &&
+	)
+
   createAndWriteOutput(mathOperator, initialResult, enteredNumber);
   writeToLog(calculationTyp, initialResult, enteredNumber, currentResult);
 }
+
 
 function add() {
   calculateResult('ADD');  

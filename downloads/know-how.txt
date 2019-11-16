@@ -218,6 +218,26 @@ JavaScript always looks at the first character and only considers other characte
 
 function() ==> Inhalt in () immer in ''
 
+Arrays []
+Objects {}
+
+const person1 = {name: 'Max'};
+const person2 = {name: 'Max'};
+person1 === person2 ==> false
+person1.name === person2.name; ==> TRUE
+
+2 Objekte gespeichert in 2 verschiedenen variablen sind NIEMALS das gleiche!
+
+AND &&
+OR || 
+
+return; in einer Funktion, beendet diese!
+
+
+
+
+
+
 
 
 
